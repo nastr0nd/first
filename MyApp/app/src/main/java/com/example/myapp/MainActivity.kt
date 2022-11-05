@@ -13,19 +13,17 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
     }
     fun onClickResult(view:View){
-        binding.res.text = myFunc()
+        numbersSize -= 1
+        if (numbersSize < 0) {
+            binding.res.text = "Please, Stop!"
+        } else binding.res.text = myFunc()
     }
-    val numbers = mutableListOf(1, 2, 3, 4, 5)
+    val numbers = mutableListOf(1, 2, 3, 4, 5, 6, 7)
     var numbersSize = numbers.size
 
     fun myFunc():String {
         val random = numbers.random()
         numbers.remove(random)
-        numbersSize -= 1
-        var result = random.toString()
-        if (numbersSize < 1) {
-            result = "Please, Stop!"
-        }
-        return "$result"
+        return "$random"
     }
 }
