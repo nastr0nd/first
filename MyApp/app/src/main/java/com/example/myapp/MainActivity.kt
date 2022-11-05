@@ -3,6 +3,7 @@ package com.example.myapp
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.core.util.rangeTo
 import com.example.myapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -18,7 +19,7 @@ class MainActivity : AppCompatActivity() {
             binding.res.text = "Please, Stop!"
         } else binding.res.text = myFunc()
     }
-    val numbers = mutableListOf(1, 2, 3, 4, 5, 6, 7)
+    val numbers = (1..30).toMutableList()
     var numbersSize = numbers.size
 
     fun myFunc():String {
